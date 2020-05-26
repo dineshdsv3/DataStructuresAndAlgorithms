@@ -1,13 +1,14 @@
 // Write a function which takes in a string and returns count of each character in the string
 
 function CharCount(str) {
-    let x = str.split("");
+    let str1 = str.toLowerCase();
+    let x = str1.split("");
     let res = {};
     // console.log(x);
     x.map((ele) => {
         if(res[ele]){
             res[ele] += 1
-        } else{
+        } else {
             res[ele] = 1
         }
     })
@@ -15,4 +16,4 @@ function CharCount(str) {
 
 }
 
-CharCount("ABCABCD")
+CharCount("ABCabcd FEDG")
