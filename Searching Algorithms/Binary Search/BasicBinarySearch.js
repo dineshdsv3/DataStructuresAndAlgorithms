@@ -9,9 +9,23 @@
 // Sample output binary([1,3,4,5,7,9,10,18,19],10) => 6
 
 function binary(arr,num) {
+    let left = 0;
+    let right = arr.length - 1;
+    while(left < right) {
+        let center = Math.floor((left+right)/2)
+        if(arr[center] === num ) {
+            return center;
+        } else if( arr[center] > num) {
+            right = center;
+        } else if(arr[center] < num) {
+            left = center
+        }
+    }
+    return -1;
 
 }
 
+console.log(binary([1,3,4,5,7,9,10,18,19,20],1))
 
-console.log(binary([1,3,4,5,7,9,10,18,19],10))
 
+// Solved and undestood the binary searching algorithm
